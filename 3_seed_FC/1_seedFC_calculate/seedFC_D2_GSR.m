@@ -1,3 +1,30 @@
+clc;clear;
+% create seed
+
+RefFile='controlFD_twotail_ROI1_precuneus.nii';
+y_Sphere([6 -57 42],5, RefFile,'ROI1_precuneus');
+
+RefFile='controlFD_twotail_ROI2_frontal.nii';
+y_Sphere([21 21 60],5, RefFile,'ROI2_SFG_R');
+
+RefFile='controlFD_twotail_ROI3_L_central.nii';
+y_Sphere([-54 0 -6],5, RefFile,'ROI3_STG_L');
+
+RefFile='controlFD_twotail_ROI4_R_central.nii';
+y_Sphere([42 -18 65],5, RefFile,'ROI4_precentral_R');
+
+RefFile='controlFD_twotail_ROI5_L_FFG.nii';
+y_Sphere([-36 -63 -15],5, RefFile,'ROI5_FFG_L');
+
+RefFile='controlFD_twotail_ROI6_R_FFG.nii';
+y_Sphere([39 -45 -18],5, RefFile,'ROI6_FFG_R');
+
+RefFile='controlFD_twotail_ROI7_R_angular.nii';
+y_Sphere([48 -69 33],5, RefFile,'ROI7_angular_R');
+
+RefFile='controlFD_twotail_ROI8_L_angular.nii';
+y_Sphere([-36 -63 21],5, RefFile,'ROI8_angular_L');
+
 % Extract the Seed Time Courses
 clc;clear;
 workingDir1='/home1/zhangyj/Desktop/MDD/Data/D2_GSR_S';
@@ -7,17 +34,16 @@ sublist1=sublist1(ind);
 sublist1=sublist1(3:end);
 n_sub1=size(sublist1,1);
 
-
 SeedSeries = [];
 % file=dir('/Volumes/MDD/Depression_Multicenter/SeedFC/test/');
-[ROI1mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI1_precuneus_mask.nii');
-[ROI2mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI2_frontal_mask.nii');
-[ROI3mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI3_L_central_mask.nii');
-[ROI4mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI4_R_central_mask.nii');
-[ROI5mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI5_L_FFG_mask.nii');
-[ROI6mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI6_R_FFG_mask.nii');
-[ROI7mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI7_R_angular_mask.nii');
-[ROI8mask,~,~,~] =y_ReadAll('controlFD_twotail_ROI8_L_angular_mask.nii');
+[ROI1mask,~,~,~] =y_ReadAll('ROI1_precuneus.nii');
+[ROI2mask,~,~,~] =y_ReadAll('ROI2_SFG_R.nii');
+[ROI3mask,~,~,~] =y_ReadAll('ROI3_STG_L.nii');
+[ROI4mask,~,~,~] =y_ReadAll('ROI4_precentral_R.nii');
+[ROI5mask,~,~,~] =y_ReadAll('ROI5_FFG_L.nii');
+[ROI6mask,~,~,~] =y_ReadAll('ROI6_FFG_R.nii');
+[ROI7mask,~,~,~] =y_ReadAll('ROI7_angular_R.nii');
+[ROI8mask,~,~,~] =y_ReadAll('ROI8_angular_L.nii');
 ROIDef{1}=ROI1mask;
 ROIDef{2}=ROI2mask;
 ROIDef{3}=ROI3mask;
